@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>测测你是谁｜好玩的测试合集</title>
+<style>
+:root{color-scheme:light;--fg:#46426b;--mut:#9a96b8;--card:#fff;--ac:#8b7cf6;--pe:#ffb4a2;--hl:#ffe9a8;--bd:#e8e4fb;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;color:var(--fg);background:#fbfaff linear-gradient(160deg,#f3efff,#fff5f0);font:300 16px/1.7 -apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif}
+.w{max-width:480px;margin:0 auto;padding:22px 18px 40px;animation:in .35s ease both}
+.w.b{animation-name:inb}
+@keyframes in{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+@keyframes inb{from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{transform:scale(.3);opacity:0}70%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
+@keyframes wob{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg) translateY(-4px)}}
+@keyframes fall{from{transform:translateY(-12vh) rotate(0)}to{transform:translateY(112vh) rotate(380deg)}}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+h1{font-size:32px;font-weight:600;line-height:1.3;margin:36px 0 12px}
+h1 span{background:linear-gradient(transparent 62%,var(--hl) 62%)}
+p{margin:0 0 14px}.m{color:var(--mut);font-size:14px}
+.em{font-size:56px;display:inline-block;animation:wob 2.4s ease-in-out infinite}
+button{font:inherit;color:var(--fg);cursor:pointer}
+.go{display:block;width:100%;padding:15px;margin-top:26px;border:0;border-radius:999px;background:linear-gradient(90deg,#8b7cf6,#b49cff);color:#fff;font-size:17px;font-weight:500;box-shadow:0 8px 20px #8b7cf633;transition:transform .15s}
+.go:active{transform:scale(.97)}
+.go.alt{background:#fff;color:var(--ac);border:1px solid var(--bd);box-shadow:none;margin-top:12px}
+.bk{border:0;background:none;color:var(--mut);padding:6px 0;font-size:14px}
+.tr{position:relative;margin:6px 0 4px}
+.tr b{position:absolute;top:-20px;font-weight:400;transform:translateX(-50%);transition:left .4s ease}
+.bar{height:5px;border-radius:3px;background:var(--bd);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,#b49cff,var(--pe));transition:width .6s ease}
+.q{font-size:21px;font-weight:500;line-height:1.5;margin:22px 0 6px}
+.o{display:block;width:100%;text-align:left;padding:15px 16px;margin:12px 0;border:1px solid var(--bd);border-radius:16px;background:var(--card);font-size:16px;transition:transform .15s,border-color .15s,background .15s;animation:up .4s ease both}
+.o+.o{animation-delay:.08s}
+.o:active,.o.sel{border-color:var(--ac);background:#f3f0ff;transform:scale(.97)}
+.code{font-size:76px;font-weight:200;letter-spacing:5px;line-height:1.1;margin:6px 0 4px;color:var(--ac);animation:pop .6s ease both}
+.nm{font-size:24px;font-weight:600;margin:0 0 8px;animation:up .5s .25s ease both}
+.dm{margin:16px 0;animation:up .5s ease both}.dm div.r{display:flex;justify-content:space-between;font-size:14px;margin-bottom:4px}
+img.cd{display:block;width:100%;border-radius:20px;margin-top:20px;box-shadow:0 10px 30px #8b7cf622;animation:pop .6s .4s ease both}
+.cf{position:fixed;top:0;font-size:24px;pointer-events:none;animation:fall 3s linear forwards;z-index:9}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.tc{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:16px 14px;border:0;border-radius:20px;text-align:left;animation:up .45s ease both;transition:transform .15s;box-shadow:0 6px 16px #8b7cf61a}
+.tc:active{transform:scale(.96)}
+.tc span{font-size:34px}.tc b{font-weight:600;font-size:16px;margin-top:6px}.tc small{color:var(--mut);font-size:12px}
+.in{display:block;width:100%;box-sizing:border-box;padding:12px 14px;margin:10px 0;border:1px solid var(--bd);border-radius:14px;background:#fff;color:var(--fg);font:inherit}
+.rc{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:14px;margin:12px 0;animation:up .35s ease both}
+.rq{font-weight:500;margin-bottom:8px}
+.ch{border:1px solid var(--bd);background:#faf9ff;border-radius:999px;padding:6px 12px;margin:4px 6px 4px 0;font-size:14px}
+.ch.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.sl{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px;padding:8px 12px;background:#f3f0ff;border-radius:12px;margin:6px 0}
+.sl button{border:0;background:none;color:var(--mut)}
+.bb{max-width:80%;padding:10px 14px;border-radius:18px;margin:10px 0;animation:up .3s ease both;word-break:break-word;line-height:1.5}
+.bb.l{background:#fff;border:1px solid var(--bd);border-top-left-radius:4px}
+.bb.r{background:var(--ac);color:#fff;margin-left:auto;border-top-right-radius:4px}
+.ch0{margin:10px 0 4px}#ms{min-height:120px}#op{margin-top:14px}
+.dc{margin:18px 0 6px;padding:16px;border-radius:20px;background:linear-gradient(135deg,#fff7d6,#ffe3ef);box-shadow:0 6px 16px #ffb4a233;animation:up .45s ease both}.dt{font-size:18px;font-weight:500;line-height:1.5;margin:6px 0}
+</style>
+</head>
+<body>
+<div class="w" id="app"></div>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script>
+var P=[
+["有空档时间，你更可能","主动约人聚一聚","刷剧看书自己待着","E","I"],
+["在聚会上你通常","主动和陌生人聊天","等别人来找你聊","E","I"],
+["表达想法时你更像","边说边想","想好再开口","E","I"],
+["社交一整天之后","越聊越精神","需要安静恢复","E","I"],
+["朋友眼中的你","热闹外向","安静慢热","E","I"],
+["走进陌生的新环境，你","很快就能和人熟起来","先观察一会儿再说","E","I"],
+["你更喜欢哪种生日","一大群人热热闹闹","和两三个好友小聚","E","I"],
+["手机响了，你","通常直接接","想先发消息问问","E","I"],
+["遇到好事，你会","马上告诉很多人","自己偷偷开心","E","I"],
+["周末难得空闲，你更想","出门到处逛逛","在家独处充电","E","I"],
+["你更相信","亲眼所见的事实","直觉和预感","S","N"],
+["学新东西时你喜欢","按步骤一步步来","先看整体思路","S","N"],
+["你更常","活在当下","想象未来","S","N"],
+["描述一件事时你","讲具体细节","用比喻和联想","S","N"],
+["你更欣赏哪种人","脚踏实地的人","有创意爱幻想的人","S","N"],
+["看一部电影，你更在意","剧情是否合理真实","背后的隐喻和想法","S","N"],
+["你更擅长","记住具体的细节","发现事物之间的联系","S","N"],
+["做一道新菜，你会","严格照着菜谱做","凭感觉随意发挥","S","N"],
+["你更喜欢哪种工作","内容明确，有章可循","常有新花样，需要创意","S","N"],
+["聊天时你常常","聊眼前发生的事","一不小心聊到宇宙和人生","S","N"],
+["朋友向你倾诉烦恼，你先","帮他分析怎么解决","先安慰和共情","T","F"],
+["做决定时你更看重","逻辑和利弊","感受和人情","T","F"],
+["和人争论时你更在意","谁说得对","气氛别太僵","T","F"],
+["被说“太冷静”，你","觉得是夸奖","会有点受伤","T","F"],
+["评价别人时你更","就事论事","顾及对方面子","T","F"],
+["朋友做了明显错的决定，你会","直接指出问题","先肯定他的心情","T","F"],
+["你更希望被评价为","聪明理性","温暖善良","T","F"],
+["团队里有人表现不好，你认为","该按规则处理","该先了解他的难处","T","F"],
+["看电影时你更容易","分析情节漏洞","被情绪带着走，容易哭","T","F"],
+["对你来说更糟的是","被说不讲道理","被说不近人情","T","F"],
+["出门旅行你","提前做好攻略","到了再说","J","P"],
+["你的桌面或房间","整齐有序","乱中有序","J","P"],
+["面对截止日期","提前完成","临近才爆发","J","P"],
+["计划被临时打乱，你","很烦躁","无所谓，甚至有点兴奋","J","P"],
+["你更喜欢","事情早点定下来","多保留一些选择","J","P"],
+["你的待办清单","每天都列，逐项打勾","偶尔才列，靠记忆和灵感","J","P"],
+["购物时你","列好清单再买","逛到哪买到哪","J","P"],
+["周末的安排","前几天就定好了","当天看心情","J","P"],
+["对于迟到，你","很在意，宁愿早到","觉得偶尔迟到问题不大","J","P"],
+["做事你更习惯","先做完再放松","先放松，状态来了再冲","J","P"]
+];
+var T={
+INTJ:["🦉","建筑师","独立冷静的战略家，脑子里永远有一张长期计划表。"],
+INTP:["🔬","逻辑学家","好奇心爆棚的思考者，最爱把问题拆开研究。"],
+ENTJ:["👑","指挥官","天生的领导者，目标明确，执行力很强。"],
+ENTP:["🎭","辩论家","点子多又爱抬杠，永远在挑战常规。"],
+INFJ:["🔮","提倡者","安静而理想主义，总能看透别人没说出口的话。"],
+INFP:["🌙","调停者","内心世界丰富，温柔又固执，对在乎的事很认真。"],
+ENFJ:["🌞","主人公","有感染力的引导者，擅长把大家聚在一起。"],
+ENFP:["🎉","竞选者","热情的点子王，走到哪里都是气氛担当。"],
+ISTJ:["📋","物流师","靠谱踏实，答应的事一定做到。"],
+ISFJ:["🧸","守卫者","默默照顾所有人的暖心后盾。"],
+ESTJ:["💼","总经理","讲规则重效率，天生的组织者。"],
+ESFJ:["🍰","执政官","热心周到，是朋友圈里的粘合剂。"],
+ISTP:["🔧","鉴赏家","冷静的动手派，遇事先拆开看看。"],
+ISFP:["🎨","探险家","随性又有审美，活在自己的节奏里。"],
+ESTP:["🏄","企业家","行动派，爱冒险，也爱刺激。"],
+ESFP:["🎤","表演者","天生的派对灵魂，享受每一个当下。"]
+};
+var FACES=["🤔","😎","🥺","😏","🤪","😴","🥳","🙈","😳","🤭"];
+var app=document.getElementById("app"),cur,Q=[],i=0,s={},ans=[],lock=false;
+function v(k){return s[k]||0}
+function shuf(a){for(var k=a.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1)),t=a[k];a[k]=a[j];a[j]=t}return a}
+function pick(p,n){return shuf(p.slice()).slice(0,n).map(function(r){return [r[0],shuf(r[1].slice())]})}
+function mk(rows,ks){return rows.map(function(r){return [r[0],r.slice(1).map(function(l,j){return [l,ks[j]]})]})}
+function best(ks){var m=0,c=[];ks.split("").forEach(function(k){var x=v(k);if(x>m){m=x;c=[k]}else if(x==m)c.push(k)});return c[Math.floor(Math.random()*c.length)]}
+function pc(a,b){return Math.round(v(a)/(v(a)+v(b))*100)}
+function lv(){return (v("1")+2*v("2"))/(2*Q.length)}
+function sb(n){return function(){var p=Math.round(lv()*100);return [[n,p+"%",p]]}}
+function sr(){return String(Math.min(3,Math.floor(lv()*4)))}
+var MB=P.map(function(r){return [r[0],[[r[1],r[3]],[r[2],r[4]]]]});
+function mq(){var q=[];for(var d=0;d<4;d++)q=q.concat(pick(MB.slice(d*10,d*10+10),5));return shuf(q)}
+var ZE=mk([
+["拿到一笔意外之财，你会","立刻拿去尝鲜体验","存起来或做稳妥投资","找朋友商量怎么花最有意思","想想怎么让重要的人开心"],
+["和人吵架时你","当场爆发，吵完就算","讲事实讲道理，不轻易让步","试着冷静沟通，分析对错","心里难受，反复回想"],
+["理想的周末是","来一场说走就走的冒险","把家收拾舒服，吃顿好的","见新朋友，聊有趣的话题","窝着听歌看电影，沉浸其中"],
+["朋友评价你最多的是","有行动力，充满热情","靠谱稳重","聪明有趣，点子多","温柔细腻，很会体贴人"],
+["遇到困难，你的第一反应","冲上去先干再说","一步步拆解，稳扎稳打","先收集信息，找最优解","先消化情绪，凭直觉判断"],
+["最让你烦的是","拖拖拉拉，磨磨蹭蹭","说话不算数，不靠谱","被管着，没有自由","被冷落，感觉不被在乎"],
+["你挑礼物更看重","够酷够特别","实用耐用","有创意有话题","有心意有回忆"],
+["你更像哪种天气","夏日烈阳","晴朗微风的秋天","多变的云天","细雨绵绵的夜晚"]
+],"FEAW");
+var ZM=mk([
+["开始一件新事情，你","第一个站出来带头","想清楚再做，开始就坚持","先试试，边做边调整"],
+["别人劝你改变主意，你","会考虑，但自己拿主意","很难被说服，认定就不变","很容易被说服"],
+["面对计划变动，你","立刻想新目标往前冲","不喜欢，想维持原样","无所谓，顺势而为"],
+["做事风格更像","开头猛，爱发起","慢热但持久","花样多，随时切换"],
+["朋友聚会谁来组局","通常是我","我只参加熟悉的","谁约都行，随缘"],
+["对于习惯，你","喜欢养成新习惯","习惯了就很难改","常常换来换去"]
+],"cfm");
+var ZR={
+Fc:["🐏","白羊座 ♈","冲在最前面的开路先锋，直来直去，行动力爆表。"],
+Ff:["🦁","狮子座 ♌","自带光芒的主角，大方热情，爱面子也够义气。"],
+Fm:["🏹","射手座 ♐","自由奔放的旅行家，乐观爱冒险，讨厌被束缚。"],
+Ec:["🐐","摩羯座 ♑","沉稳自律的目标控，慢慢爬也一定爬到山顶。"],
+Ef:["🐂","金牛座 ♉","稳稳当当的享乐派，认定的人和事就不会变。"],
+Em:["🌾","处女座 ♍","追求完美的细节控，嘴上挑剔，其实最会照顾人。"],
+Ac:["⚖️","天秤座 ♎","优雅的平衡大师，讲究公平，最怕冲突和选择。"],
+Af:["🏺","水瓶座 ♒","脑洞清奇的独行者，理性又疏离，想法总领先一步。"],
+Am:["👯","双子座 ♊","好奇心满格的话痨，聪明灵活，什么都想试一下。"],
+Wc:["🦀","巨蟹座 ♋","外壳硬内心软的顾家派，重感情，特别会照顾人。"],
+Wf:["🦂","天蝎座 ♏","深沉专注的神秘派，爱恨分明，认定就很执着。"],
+Wm:["🐟","双鱼座 ♓","浪漫温柔的梦想家，共情力超强，常活在自己的世界里。"]
+};
+var TQ=mk([
+["早上起不来的时候，你","约朋友一起吃早饭","给自己一份温柔的早餐","灌杯咖啡立刻开工","再赖五分钟，听首歌"],
+["朋友圈你通常","天天更新分享生活","偶尔晒美食和风景","很少发，发就是正事","发些有点文艺的句子"],
+["逛街时你会","拉着一群人逛到天黑","慢慢逛，遇到可爱的就买","目标明确，买完就走","专挑小众店，逛出风格"],
+["收到消息你","秒回，还爱发表情包","认真回复，语气温柔","简短回复，说清楚就行","想一想再回，有时会忘"],
+["你最舒服的状态是","被朋友包围","有人陪着，不用说话","一个人高效做完事","一个人发呆，沉浸世界"],
+["被夸的时候你","大方接受，还夸回去","有点害羞，笑着道谢","点点头，说声谢谢","嘴上说哪有，心里偷笑"],
+["理想的夜晚是","热闹的聚餐或K歌","和喜欢的人散步聊天","读书或学点新东西","关灯躺着，想很多事"],
+["选饮料你会","什么新品都想试","点自己喜欢的那杯","无糖少冰，健康第一","随心情，今天想喝啥喝啥"]
+],"abcd");
+var TR={
+a:["🧋","珍珠奶茶","热闹又治愈的社交担当，身边总是围着人。"],
+b:["🥭","杨枝甘露","温柔清甜又有层次，谁和你相处都舒服。"],
+c:["☕","无糖美式","清醒克制的效率派，话不多，但很有分量。"],
+d:["🍇","芝士葡萄","有点小个性的氛围感选手，慢慢品才知道你的好。"]
+};
+var SQ=mk([
+["被拉进一个陌生的饭局","开心，认识新朋友","有点紧张，但能应付","想找借口不去"],
+["电话铃响了","直接接","有点犹豫","先看是谁，然后改发消息"],
+["电梯里碰到不太熟的同事","主动打招呼聊两句","点点头微笑","假装看手机"],
+["要在很多人面前发言","有点兴奋","紧张，但能讲完","恨不得消失"],
+["外卖送错了东西","打电话沟通","在平台留言","算了，自己吃了"],
+["快递小哥敲门","正常开门拿","等他走了再开","假装不在家"],
+["群里有人@你","立刻回复","想想再回","装作没看见，过会儿再说"],
+["一个人去餐厅吃饭","完全没问题","有点不自在","宁愿点外卖"]
+],"012");
+var SR={
+0:["🦋","社交达人","你几乎没有社恐，走到哪都能自来熟。"],
+1:["🙂","轻度社恐","陌生场合会紧张，但稍微适应就好。"],
+2:["🐢","中度社恐","能不社交就不社交，熟人面前才是真实的你。"],
+3:["🐚","社恐晚期","你的社交电量只有1%，请把快递放门口。"]
+};
+var LQ=mk([
+["喜欢的人三小时没回消息","正常，他可能在忙","有点在意，会看几次手机","开始脑补各种剧情"],
+["恋爱中你的朋友圈","该怎样还是怎样","偶尔会提到对方","全是对方"],
+["对方想让你放弃一个爱好","不可能","商量一下","好的，听你的"],
+["吵架之后","各自冷静，再沟通","纠结要不要先低头","马上道歉，只要别生气"],
+["对方随口说的小事","不太记得","记得一些","全都记得"],
+["朋友劝你对方不适合你","认真考虑","会犹豫","你们不懂他"],
+["你的生活重心","自己的事业和生活","一半一半","几乎围着对方转"],
+["失恋之后","很快调整好","难受一阵子","要缓很久很久"]
+],"012");
+var LR={
+0:["🧊","清醒派","爱情只是生活的一部分，你把自己放在第一位。"],
+1:["💞","理智恋爱者","会投入感情，也会保留自己的边界。"],
+2:["🍯","恋爱脑初期","对方一个笑容就能让你开心一整天，注意别太上头。"],
+3:["🔥","恋爱脑晚期","爱得全情投入，记得也要好好爱自己。"]
+};
+var TS=[
+{e:"🧠",t:"16型人格",d:"20题 · 测你的MBTI",c:"#e6e0ff",tag:"你的人格类型是",code:1,q:mq,R:T,
+ res:function(){return (v("E")>v("I")?"E":"I")+(v("S")>v("N")?"S":"N")+(v("T")>v("F")?"T":"F")+(v("J")>v("P")?"J":"P")},
+ b:function(){return [["E","I"],["S","N"],["T","F"],["J","P"]].map(function(p){var a=v(p[0])>v(p[1])?p[0]:p[1],o=a==p[0]?p[1]:p[0],x=pc(a,o);return [p[0]+" 对 "+p[1],"偏 "+a+" "+x+"%",x]})}},
+{e:"♈",t:"星座测试",d:"8题 · 按性格匹配星座",c:"#ffe3d8",tag:"我推测，你可能是",q:function(){return shuf(pick(ZE,5).concat(pick(ZM,3)))},R:ZR,
+ res:function(){return best("FEAW")+best("cfm")},
+ b:function(){return [["🔥 火象","F"],["🌍 土象","E"],["💨 风象","A"],["💧 水象","W"]].map(function(x){var p=v(x[1])*20;return [x[0],p+"%",p]})}},
+{e:"🧋",t:"本命奶茶",d:"6题 · 你是哪杯奶茶",c:"#fff1c9",tag:"你的本命奶茶是",q:function(){return pick(TQ,6)},R:TR,res:function(){return best("abcd")}},
+{e:"🐚",t:"社恐指数",d:"6题 · 你有多社恐",c:"#dcf3e8",tag:"你的社交结果是",q:function(){return pick(SQ,6)},R:SR,res:sr,b:sb("社恐指数")},
+{e:"💘",t:"恋爱脑指数",d:"6题 · 你有多恋爱脑",c:"#ffd9e8",tag:"你的恋爱结果是",q:function(){return pick(LQ,6)},R:LR,res:sr,b:sb("恋爱脑指数")}
+];
+function show(h,back){app.className="w"+(back?" b":"");app.innerHTML=tr(h);void app.offsetWidth;window.scrollTo(0,0)}
+var DT=['给很久没联系的朋友发一句：最近怎么样？','今天多喝两杯水，给自己倒一杯热的','出门前整理一下桌面，回来心情会变好','找一首很久没听的老歌，从头听完','对着镜子笑一下，坚持三秒','写下今天的三件小确幸','走路时抬头看看天','把手机放远，专心吃一顿饭','具体地夸一个人','清理手机里的10张旧截图','做五次深呼吸，慢慢来','今晚比平时早睡半小时','给家人打个电话，哪怕只聊两分钟','试一家没去过的小店','把最想做的事，现在就开始五分钟','换一张新的手机壁纸','站起来伸个懒腰，转转肩膀','对身边的人说声“谢谢”','买一杯喜欢的饮料奖励自己','取消关注三个让你焦虑的账号','出门走十分钟，不带耳机','把一直拖着的小事做掉','给未来的自己留一句话','看一部很久想看的电影','帮朋友或同事一个小忙','今天只专心做好一件事','整理一下钱包或背包','吃一个水果','给宠物或绿植多一点关心','写下一个最近的小目标','拍一张今天看到的好看的东西','把憋着的话写下来，再删掉','学一个新单词或小知识','今天试试不抱怨','给自己做一顿像样的饭','晒晒太阳，哪怕五分钟','回顾这一周，你做对了什么','把今天的好心情分享给一个人','约朋友周末一起吃饭','今天允许自己慢一点','给自己泡一杯喜欢的茶，慢慢喝完','对第一个遇见的人微笑','把手机通知关掉一小时','今天吃一样没吃过的东西','和朋友分享一首你最近单曲循环的歌','整理一个抽屉，只要一个','写下一件你今天值得骄傲的事','走楼梯，不坐电梯','给一位老师或长辈发一句感谢','拉伸五分钟，把肩颈放松一下','晚饭后散步十五分钟','记住一个新认识的人的名字','删掉一个不再需要的App','把想说的夸奖，真的说出口','今天准时吃三餐','看看窗外，数一数你看到的绿色','画一个丑丑的涂鸦，不给任何人看','给自己的房间换一个摆放角度','和家人一起吃一顿饭，不看手机','把一件旧衣服捐出去','试着用另一只手刷牙，换个新鲜感','今天只喝水，不喝饮料','给朋友推荐一本书或一部剧','写三句话的日记','把床铺整理好再出门','对一件不顺心的小事一笑而过','学一个简单的手工，比如折纸','回一条拖了很久的消息','把今天的计划写成三件事，只做这三件','问身边的人一句：你今天还好吗？','听一段白噪音，专心休息五分钟','给窗边的植物浇点水','拍一张今天的天空','去楼下的小店买点喜欢的零食','今天夸自己一句：辛苦啦','坐公交或地铁时，观察一个有趣的细节','给十年后的自己想一个问题','擦一擦手机屏幕和耳机','做一道最简单的家常菜','睡前不刷手机，翻几页书','对服务员或快递员说声辛苦了','把桌上的杂物清掉一半','挑一首歌，大声唱出来','给自己列一份“想做的小事”清单','去一个没去过的公园或街道走走','把最近的烦恼写下来，再撕掉','今天主动打一次招呼','洗个热水澡，早点放松','把一杯温水当作早晨的仪式','坐直，慢慢呼吸一分钟','把充电线和耳机整理一下','找出一张旧照片，回忆当时的心情','给朋友们发一条开心的动态','今天少说一次“算了”','一次只做一件事，不要同时刷手机','逛一家书店，随手翻翻','给爸妈发一张你今天吃的饭','把一个小目标拆成三步','在路上多看一眼好看的建筑','给自己买一朵花','礼貌地拒绝一次不想做的事','把闹钟铃声换成喜欢的歌','洗一件拖了很久的衣服','约一个好久没见的朋友吃饭','试一条新的回家路线','吃一顿慢饭，每一口都多嚼几下','写一张小卡片，送给身边的人','在今天里找一个让你笑出来的瞬间','问朋友一个有趣的问题，比如“最想去的地方”','清理一下电脑桌面','给自己十分钟什么也不做','坐下来，认真听一个人把话说完','今晚把明天的衣服准备好','看一部纪录片，学点新东西','对自己说：今天已经很棒了','把水杯放在手边，记得补水','去阳光好的地方坐一会儿','回忆今天最温暖的一件小事','给家里的某个角落加个小装饰','学一个简单的外语句子','试一次不看攻略的小探索','帮别人开一次门或拿一次东西','写下三个让你感谢的人','睡前想一件期待的事','做一个小小的拉伸或瑜伽动作','把很久没用的东西放进“再说吧”箱子','给陌生人一个微笑','点一杯平时舍不得买的饮品','整理一下手机相册','吃饭前，认真说一句“我开动了”','听一首没听过的歌，认识一位新歌手','在便利贴上写一句鼓励自己的话','和宠物或小动物玩五分钟','数一数今天你说了几次谢谢','给自己做一碗热汤或热粥','把一个小习惯坚持到今天晚上','给远方的朋友发一张你这里的天气','站在窗边，看一分钟街景','允许自己今天做错一件小事','睡前对今天说一句晚安'];
+var DC=['红色🔴','橙色🟠','黄色🟡','绿色🟢','蓝色🔵','紫色🟣','粉色🌸','白色⚪'];
+function dayCard(){var t=new Date(),d=Math.floor((t.getTime()-t.getTimezoneOffset()*6e4)/864e5);return '<div class="dc"><div class="m">☀️ 今日小事 · '+t.toLocaleDateString(LG=='en'?'en-US':'zh-CN',{month:'long',day:'numeric',weekday:'short'})+'</div><div class="dt">'+DT[d%DT.length]+'</div><div class="m">幸运色：'+DC[d*3%DC.length]+' · 幸运数字：'+(d*7%9+1)+'</div></div>'}
+function home(){
+ LH=null;
+ show('<button class="bk" id="lg" style="float:right">'+(LG=="en"?"中文":"EN")+'</button><div style="margin-top:26px"><span class="em">🔮</span> <span class="em" style="animation-delay:.3s">✨</span></div><h1>测测你是谁<br><span>好玩的测试合集</span></h1><p class="m">免登录，每次的题目都不一样，结果还能存成图片发给朋友。</p>'+dayCard()+'<div class="g" style="grid-template-columns:1fr">'+CATS.map(function(t,x){return '<button class="tc" data-i="'+x+'" style="background:'+t.c+';animation-delay:'+x*.1+'s;padding:20px 18px"><span style="font-size:44px">'+t.e+'</span><b style="font-size:19px">'+t.t+'</b><small style="font-size:13px">'+t.d+'</small></button>'}).join("")+'</div><p class="m" style="margin-top:22px;text-align:center">娱乐为主，结果仅供参考 💜</p><button class="bk" id="pv" style="display:block;margin:0 auto">隐私政策</button>');
+ each(".tc",function(b){b.onclick=function(){hub(CATS[+b.getAttribute("data-i")])}});
+ document.getElementById("lg").onclick=function(){try{localStorage.setItem("lg",LG=="en"?"zh":"en")}catch(e){}location.reload()};
+ document.getElementById("pv").onclick=privacy;
+}
+function hub(c){
+ LH=function(){hub(c)};
+ show('<button class="bk" id="h0">← 返回首页</button><div style="margin-top:8px"><span class="em">'+c.e+'</span></div><h1 style="font-size:28px;margin:10px 0 6px">'+c.t+'</h1><p class="m">'+c.d+'</p><div class="g">'+c.L.map(function(t,x){return '<button class="tc" data-i="'+x+'" style="background:'+t.c+';animation-delay:'+x*.07+'s"><span>'+t.e+'</span><b>'+t.t+'</b><small>'+t.d+'</small></button>'}).join("")+'</div>');
+ document.getElementById("h0").onclick=home;
+ each(".tc",function(b){b.onclick=function(){var t=c.L[+b.getAttribute("data-i")];t.pool?dqOpen(t):begin(t)}});
+}
+function begin(t){cur=t;Q=t.q();i=0;ans=[];s={};ask(1)}
+function ask(dir){
+ var q=Q[i],n=Q.length,p0=Math.max(0,(i-dir)/n*100),p1=i/n*100,f=FACES[Math.floor(Math.random()*FACES.length)],o="";
+ q[1].forEach(function(x,j){o+='<button class="o" data-k="'+x[1]+'" style="animation-delay:'+j*.07+'s">'+x[0]+'</button>'});
+ show('<button class="bk" id="bk">← '+(i?"上一题":"返回首页")+'</button><div class="tr"><div class="bar"><i id="pg" style="width:'+p0+'%"></i></div><b id="rn" style="left:'+p0+'%">🏃</b></div><p class="m" style="margin-top:10px">'+cur.t+' · 第 '+(i+1)+' / '+n+' 题</p><div class="q"><span class="em" style="font-size:34px;vertical-align:-4px;margin-right:6px">'+f+'</span>'+q[0]+'</div>'+o,dir<0);
+ setTimeout(function(){var a=document.getElementById("pg"),r=document.getElementById("rn");if(a){a.style.width=p1+"%";r.style.left=p1+"%"}},30);
+ document.getElementById("bk").onclick=back;
+ var b=app.querySelectorAll(".o");lock=false;
+ for(var j=0;j<b.length;j++)b[j].onclick=function(){
+  if(lock)return;lock=true;var k=this.getAttribute("data-k");this.classList.add("sel");
+  setTimeout(function(){s[k]=v(k)+1;ans.push(k);i++;i<n?ask(1):done()},220);
+ };
+}
+function back(){if(i==0){(LH||home)();return}i--;s[ans.pop()]--;ask(-1)}
+function done(){
+ var t=cur,k=t.res(),r=t.R[k],big=t.code?k:r[1],sub=t.code?r[1]:"",h="",w=[];
+ (t.b?t.b():[]).forEach(function(x,j){w.push(x[2]);h+='<div class="dm" style="animation-delay:'+(.35+j*.1)+'s"><div class="r"><span>'+x[0]+'</span><span>'+x[1]+'</span></div><div class="bar"><i class="bw" style="width:0"></i></div></div>'});
+ show('<p class="m" style="margin-top:18px;text-align:center">'+t.tag+'</p><div style="text-align:center"><span class="em" style="font-size:64px">'+r[0]+'</span><div class="code"'+(t.code?'':' style="font-size:42px;font-weight:500;letter-spacing:1px"')+'>'+big+'</div>'+(sub?'<div class="nm">'+sub+'</div>':'')+'</div><p style="text-align:center;margin-top:10px">'+r[2]+'</p>'+h+'<img class="cd" id="img" alt="结果卡片"><p class="m" style="text-align:center;margin-top:10px">长按图片保存，发给朋友一起测 💌</p><button class="go" id="r">再测一次（换一批题）</button><button class="go alt" id="bb">← 回到最后一题改答案</button><button class="go alt" id="hm">🏠 去测别的</button>');
+ var bs=app.querySelectorAll(".bw");setTimeout(function(){for(var j=0;j<bs.length;j++)bs[j].style.width=w[j]+"%"},500);
+ document.getElementById("img").src=card(t,big,sub,r);
+ document.getElementById("r").onclick=function(){begin(t)};
+ document.getElementById("bb").onclick=back;
+ document.getElementById("hm").onclick=function(){(LH||home)()};
+ for(var j=0;j<16;j++){var e=document.createElement("span");e.className="cf";e.textContent=["🎉","✨","💜","🌸","⭐","🍭"][j%6];e.style.left=Math.random()*94+"vw";e.style.animationDelay=Math.random()*1.2+"s";e.style.animationDuration=2.4+Math.random()*1.6+"s";document.body.appendChild(e);setTimeout(function(n){return function(){n.remove()}}(e),5200)}
+}
+function wrap(x,t,X,Y,W,L){var l="";for(var k=0;k<t.length;k++){var ch=t[k];if(x.measureText(l+ch).width>W){x.fillText(l,X,Y);Y+=L;l=ch}else l+=ch}x.fillText(l,X,Y)}
+function card(t,big,sub,r){
+ var cv=document.createElement("canvas");cv.width=600;cv.height=800;var x=cv.getContext("2d"),y;
+ var g=x.createLinearGradient(0,0,600,800);g.addColorStop(0,"#d9d2ff");g.addColorStop(1,"#ffe3d8");
+ x.fillStyle=g;x.fillRect(0,0,600,800);
+ x.fillStyle="rgba(255,255,255,.65)";x.beginPath();x.arc(300,300,200,0,7);x.fill();
+ var F='"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif',E='"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",',ink="#46426b";
+ x.textAlign="center";x.fillStyle=ink;
+ x.font="400 28px "+F;x.fillText(t.tag,300,100);
+ x.font="120px "+E+"sans-serif";x.fillText(r[0],300,320);
+ x.fillStyle="#8b7cf6";
+ if(sub){x.font="200 120px "+F;x.fillText(big,300,450);x.fillStyle=ink;x.font="600 46px "+F;x.fillText(sub,300,520);y=590}
+ else{x.font="600 62px "+F;x.fillText(big,300,460);y=540}
+ x.fillStyle=ink;x.font="300 28px "+F;x.textAlign="left";wrap(x,r[2],70,y,460,44);
+ x.textAlign="center";x.fillStyle="#8b7cf6";x.font="500 24px "+F;x.fillText(tr("来测测你是谁 ✨"),300,740);
+ return cv.toDataURL("image/png");
+}
+function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}
+function enc(o){return btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"")}
+function dec(s){s=s.replace(/-/g,"+").replace(/_/g,"/");while(s.length%4)s+="=";return JSON.parse(decodeURIComponent(escape(atob(s))))}
+function each(sel,f){var b=app.querySelectorAll(sel);for(var j=0;j<b.length;j++)f(b[j],j)}
+function rnd(a){return a[Math.floor(Math.random()*a.length)]}
+var QP=[
+"我最喜欢的颜色是？|红色,蓝色,绿色,黄色,黑色,白色,粉色,紫色",
+"我最喜欢的食物是？|火锅,烧烤,寿司,披萨,甜点,面食,米饭,炸鸡",
+"我最喜欢的饮料是？|奶茶,咖啡,可乐,果汁,气泡水,热水,啤酒,酸奶",
+"我最喜欢的季节是？|春天,夏天,秋天,冬天",
+"我最喜欢的动物是？|猫,狗,兔子,熊猫,狐狸,海豚,企鹅,仓鼠",
+"我最喜欢的运动是？|跑步,游泳,篮球,羽毛球,瑜伽,骑行,足球,不爱运动",
+"我最喜欢的休闲方式是？|刷剧,打游戏,逛街,睡觉,看书,旅行,听音乐,探店",
+"我最怕什么？|蟑螂,鬼,高处,蛇,社交,独处,考试,打针",
+"我最喜欢的电影类型是？|喜剧,爱情,科幻,悬疑,动作,动画,恐怖,纪录片",
+"我最想去的地方是？|日本,冰岛,欧洲,海边,雪山,沙漠,东南亚,哪都行",
+"我更喜欢哪种性格？|热情外向,安静慢热,搞笑幽默,稳重靠谱",
+"我最讨厌的食物是？|香菜,苦瓜,芹菜,内脏,榴莲,青椒,肥肉,蘑菇",
+"我最常用的表情是？|😂,🥹,😎,🙄,😭,👍,🤔,💀",
+"我最想拥有的超能力是？|隐身,飞行,读心,时间暂停,瞬间移动,不用睡觉,变富",
+"我理想的约会是？|看电影,吃大餐,逛公园,在家待着,旅行,游乐园",
+"我的口头禅是？|没事,好的,哈哈哈,笑死,算了,真的假的,随便"
+].map(function(l){var a=l.split("|");return [a[0],a[1].split(",")]});
+var CR={name:"",sel:[],show:[],c:{q:"",o:["","","",""],a:-1},msg:"",kind:null,x:-1,xv:""},LH=null;
+var R1=["答对啦！👏","不愧是你！🥳","懂我 😎","bingo！🎯"],W1=["不对哦～😜 再想想","嘿嘿，错啦 🙈","你是不是不太了解我？😏","差一点点～再猜猜 🤭"];
+function dqShow(){var u=CR.sel.map(function(x){return x[0]});CR.show=shuf(CR.kind.pool.filter(function(p){return u.indexOf(p[0])<0})).slice(0,4)}
+function dqOpen(t){if(CR.kind!==t){CR.kind=t;CR.sel=[];CR.c={q:"",o:["","","",""],a:-1};CR.x=-1;dqShow()}dq()}
+function dq(keep){
+ var c=CR.c,h='<button class="bk" id="h0">← 返回首页</button><h1 style="font-size:26px;margin:12px 0 6px">'+CR.kind.e+" "+CR.kind.t+'</h1><p class="m">选几道题，选出你自己的答案，生成二维码发给朋友，让他们来测测。</p><input class="in" id="nm" maxlength="8" placeholder="你的昵称（朋友会看到）" value="'+esc(CR.name)+'">';
+ h+='<p style="margin:14px 0 4px">已选 '+CR.sel.length+' / 10 题（至少3题）</p>';
+ CR.sel.forEach(function(x,j){h+='<div class="sl"><span>'+esc(x[0])+' → <b>'+esc(x[1][x[2]])+'</b></span><button data-d="'+j+'">✕</button></div>'});
+ h+='<p style="margin:18px 0 0">系统推荐题 <button class="bk" id="rf" style="float:right">🔄 换一批</button></p><p class="m" style="margin:0">点你的答案就算选好了，其余选项系统会自动补上。</p>';
+ CR.show.forEach(function(p,j){h+='<div class="rc"><div class="rq">'+p[0]+'</div>'+p[1].map(function(o,k){return '<button class="ch" data-p="'+j+'" data-k="'+k+'">'+o+'</button>'}).join("")+'<button class="ch" data-x="'+j+'">✏️ 其他答案</button>'+(CR.x==j?'<div style="display:flex;gap:8px;align-items:center"><input class="in" id="xi" maxlength="14" placeholder="写你自己的答案" value="'+esc(CR.xv)+'" style="flex:1"><button class="ch on" id="xo">确定</button></div>':'')+'</div>'});
+ h+='<p style="margin:18px 0 0">✏️ 自己出一题</p><div class="rc"><input class="in" id="cq" placeholder="题目，比如：我养的猫叫什么？" value="'+esc(c.q)+'" style="margin-top:0">'+c.o.map(function(o,k){return '<div style="display:flex;gap:8px;align-items:center"><button class="ch'+(c.a==k?' on':'')+'" data-a="'+k+'" style="white-space:nowrap">'+(c.a==k?'✓ 正确':'设为正确')+'</button><input class="in" data-o="'+k+'" maxlength="14" placeholder="选项'+(k+1)+'" value="'+esc(o)+'" style="flex:1;margin:4px 0"></div>'}).join("")+'<button class="go alt" id="ad" style="margin-top:8px">+ 添加这一题</button></div>';
+ h+=(CR.msg?'<p class="m" style="color:#e0566b">'+CR.msg+'</p>':'')+'<button class="go" id="gn">生成测试 ✨</button>';
+ if(keep){var y=window.scrollY;app.innerHTML=tr(h);window.scrollTo(0,y)}else show(h);
+ CR.msg="";
+ document.getElementById("h0").onclick=function(){(LH||home)()};
+ document.getElementById("nm").oninput=function(){CR.name=this.value};
+ document.getElementById("rf").onclick=function(){CR.x=-1;dqShow();dq(1)};
+ each("[data-d]",function(b){b.onclick=function(){CR.sel.splice(+b.getAttribute("data-d"),1);dq(1)}});
+ each("[data-p]",function(b){b.onclick=function(){
+  if(CR.sel.length>=10){CR.msg="最多10题哦";dq(1);return}
+  var p=CR.show[+b.getAttribute("data-p")],cr=p[1][+b.getAttribute("data-k")],o=shuf(shuf(p[1].filter(function(x){return x!=cr})).slice(0,3).concat(cr));
+  CR.sel.push([p[0],o,o.indexOf(cr)]);CR.x=-1;dqShow();dq(1)}});
+ each("[data-x]",function(b){b.onclick=function(){var j=+b.getAttribute("data-x");CR.x=CR.x==j?-1:j;CR.xv="";dq(1)}});
+ var xi=document.getElementById("xi");
+ if(xi){xi.oninput=function(){CR.xv=this.value};document.getElementById("xo").onclick=function(){
+  var a=CR.xv.trim(),p=CR.show[CR.x];
+  if(CR.sel.length>=10)CR.msg="最多10题哦";
+  else if(!a)CR.msg="先写下你的答案";
+  else{var o=shuf(shuf(p[1].filter(function(x){return x!=a})).slice(0,3).concat(a));CR.sel.push([p[0],o,o.indexOf(a)]);CR.x=-1;CR.xv="";dqShow()}
+  dq(1)}}
+ document.getElementById("cq").oninput=function(){CR.c.q=this.value};
+ each("[data-o]",function(b){b.oninput=function(){CR.c.o[+b.getAttribute("data-o")]=b.value}});
+ each("[data-a]",function(b){b.onclick=function(){CR.c.a=+b.getAttribute("data-a");dq(1)}});
+ document.getElementById("ad").onclick=function(){
+  var q=CR.c.q.trim(),o=CR.c.o.map(function(x){return x.trim()}),cr=o[CR.c.a],f=o.filter(Boolean);
+  if(CR.sel.length>=10)CR.msg="最多10题哦";
+  else if(!q||f.length<2||!cr)CR.msg="请填好题目、至少2个选项，并设一个正确答案";
+  else{CR.sel.push([q,f,f.indexOf(cr)]);CR.c={q:"",o:["","","",""],a:-1}}
+  dq(1)};
+ document.getElementById("gn").onclick=function(){if(!CR.name.trim()){CR.msg="先写下你的昵称哦";dq(1);return}if(CR.sel.length<3){CR.msg="至少选3道题再生成哦";dq(1);return}dqOut()};
+}
+function qrImg(url,name,n0,tt){
+ var qr=qrcode(0,"L");qr.addData(url);qr.make();
+ var n=qr.getModuleCount(),cs=Math.max(2,Math.floor(440/n)),sz=n*cs,cv=document.createElement("canvas");cv.width=600;cv.height=760;var x=cv.getContext("2d");
+ var g=x.createLinearGradient(0,0,600,760);g.addColorStop(0,"#d9d2ff");g.addColorStop(1,"#ffe3d8");x.fillStyle=g;x.fillRect(0,0,600,760);
+ var ox=(600-sz)/2,oy=200;x.fillStyle="#fff";x.fillRect(ox-24,oy-24,sz+48,sz+48);x.fillStyle="#46426b";
+ for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(qr.isDark(r,c))x.fillRect(ox+c*cs,oy+r*cs,cs,cs);
+ var F='"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif';x.textAlign="center";
+ x.font="600 36px "+F;x.fillText(tr(name+" 的 "+tt),300,95);
+ x.font="300 26px "+F;x.fillText(tr(n0+" 道题 · 看看你是不是真朋友"),300,145);
+ x.fillStyle="#8b7cf6";x.font="500 26px "+F;x.fillText(tr("扫码开始挑战 ✨"),300,oy+sz+85);
+ return cv.toDataURL("image/png");
+}
+function dqOut(){
+ var d={n:CR.name.trim()||"我",t:CR.kind.t,q:CR.sel},url=location.href.split("#")[0]+"#q="+enc(d),im="",why="";
+ try{im=qrImg(url,d.n,d.q.length,d.t)}catch(e){why="二维码生成失败（题目可能太长，或二维码组件没加载出来），先用下面的链接分享吧。"}
+ var warn=(!/^https?:$/.test(location.protocol)||/claude/.test(location.hostname));
+ show('<button class="bk" id="b2">← 回去修改</button><h1 style="font-size:26px;margin:12px 0 6px">🎉 做好啦！</h1><p class="m">把二维码或链接发给朋友，他们就能来测测有多懂你。</p>'+(im?'<img class="cd" src="'+im+'" alt="二维码"><p class="m qn" style="text-align:center;margin-top:8px">长按图片保存，发到朋友圈或群里 💌</p>':'<p class="m" style="color:#e0566b">'+why+'</p>')+'<input class="in" id="lk" readonly value="'+esc(url)+'"><button class="go alt" id="cp" style="margin-top:0">复制链接</button>'+(warn?'<p class="m" style="margin-top:12px">⚠️ 现在这个页面还在 Claude 上，朋友打开链接看不到你的题。把网站放到你自己的网址后，二维码和链接才会生效。</p>':'')+'<button class="go" id="py">▶ 先自己试玩一下</button>');
+ document.getElementById("b2").onclick=function(){dq()};
+ document.getElementById("py").onclick=function(){dqPlay(d,1)};
+ document.getElementById("cp").onclick=function(){var i=document.getElementById("lk");i.select();try{navigator.clipboard.writeText(i.value)}catch(e){document.execCommand("copy")}this.textContent=tr("已复制 ✓")};
+ var els=app.querySelectorAll("img.cd,.qn,#lk,#cp");
+ if(!UL[url]&&typeof window.SHOW_REWARDED_AD=="function"){
+  for(var j=0;j<els.length;j++)els[j].style.display="none";
+  var g=document.createElement("div");g.className="rc";g.style.textAlign="center";
+  g.innerHTML=tr('<div style="font-size:40px">🔒</div><p>看一段短广告，就能解锁你的二维码和分享链接</p><button class="go" id="wa" style="margin-top:6px">▶ 看广告解锁</button>');
+  app.insertBefore(g,document.getElementById("lk"));
+  document.getElementById("wa").onclick=function(){adShow(function(){UL[url]=1;g.remove();for(var j=0;j<els.length;j++)els[j].style.display=""})};
+ }
+}
+function dqPlay(d,pre){
+ var i=0,sc=0,bad=0,N=d.q.length;
+ show('<button class="bk" id="ex">← '+(pre?"回到出题":"去测别的")+'</button><div class="ch0"><span class="em" style="font-size:34px">🙂</span> <b>'+esc(d.n)+'</b><span class="m"> 的'+esc(d.t||"小测试")+'</span></div><div id="ms"></div><div id="op"></div>');
+ var ms=document.getElementById("ms"),op=document.getElementById("op");
+ document.getElementById("ex").onclick=pre?function(){dq()}:home;
+ function bub(c,t){var b=document.createElement("div");b.className="bb "+c;b.textContent=tr(t);ms.appendChild(b);b.scrollIntoView({behavior:"smooth",block:"end"});return b}
+ function bot(t,f,keep){if(!keep)op.innerHTML="";op.style.pointerEvents="none";var b=bub("l","···");setTimeout(function(){b.textContent=tr(t);b.scrollIntoView({behavior:"smooth",block:"end"});op.style.pointerEvents="";f&&f()},700)}
+ function ask(){
+  var q=d.q[i];bad=0;
+  bot("第 "+(i+1)+" 题："+q[0],function(){
+   op.innerHTML=q[1].map(function(o,k){return '<button class="o" data-k="'+k+'" style="animation-delay:'+k*.06+'s">'+esc(o)+'</button>'}).join("");
+   each("#op .o",function(b){b.onclick=function(){reply(+b.getAttribute("data-k"),b)}});
+  });
+ }
+ function reply(k,b){
+  var q=d.q[i];bub("r",q[1][k]);
+  if(k==q[2]){if(!bad)sc++;bot(rnd(R1),function(){i++;i<N?ask():end()})}
+  else{bad=1;b.disabled=true;b.style.opacity=.4;bot(rnd(W1),null,1)}
+ }
+ function end(){
+  var r=sc/N,g=r==1?"满分！你是我的灵魂知己 💯":r>=.7?"很懂我嘛，是真朋友 🥳":r>=.4?"还行，再多了解我一点～😏":"我们是不是不太熟？🙈";
+  bot("测完啦！你一次答对了 "+sc+" / "+N+" 题。"+g,function(){
+   op.innerHTML='<button class="go" id="me">🫶 我也要出一份</button><button class="go alt" id="hm1">🏠 去测别的</button>';
+   document.getElementById("me").onclick=function(){dqOpen(FR.filter(function(f){return f.t==d.t})[0]||FR[0])};document.getElementById("hm1").onclick=home;
+  });
+ }
+ bot("嗨～我是"+d.n+" 👋 来玩玩「"+(d.t||"你有多懂我")+"」吧！共 "+N+" 题。",ask);
+}
+function pp(a){return a.map(function(l){var q=l.split("|");return [q[0],q[1].split(",")]})}
+var QC=pp([
+"我们第一次见面是在？|学校,朋友聚会,网上,工作,旅行中,相亲",
+"我最喜欢你哪一点？|温柔,幽默,聪明,颜值,上进,会照顾人",
+"我们的第一次约会是？|吃饭,看电影,逛街,散步,游乐园,咖啡店",
+"我生气了最想你怎么做？|抱抱我,哄我,让我静一静,请我吃好吃的,认真道歉,逗我笑",
+"我最想和你一起去的地方是？|海边,日本,雪山,游乐园,欧洲,家附近就好",
+"我最喜欢你送我的礼物是？|花,衣服,包包,手写信,零食,电子产品",
+"我最受不了你的哪个习惯？|熬夜,玩手机,拖延,回消息慢,乱扔东西,爱抬杠",
+"我理想中的未来是？|安稳小家,环游世界,事业成功,养一堆宠物,简单快乐,走一步看一步"
+]);
+var QB=pp([
+"我们是怎么认识的？|同学,室友,同事,网友,邻居,朋友介绍",
+"我最爱吐槽你什么？|迟到,拖延,爱睡觉,抠门,爱炫耀,话太多",
+"我最想和你一起做什么？|旅行,吃大餐,打游戏,逛街,看演唱会,发呆",
+"我心情不好时你该？|陪我聊天,请我吃东西,让我静静,带我出去玩,逗我笑,听我说",
+"我觉得你最像哪种动物？|猫,狗,猪,兔子,熊,猴子",
+"我最喜欢和你一起吃什么？|火锅,烧烤,奶茶,炸鸡,甜点,小吃摊",
+"我最佩服你的是？|聪明,自律,幽默,讲义气,心态好,会赚钱",
+"你在我手机里的备注是？|本名,外号,搞笑称呼,宝宝,大佬,损友"
+]);
+var LG=(function(){try{var s=localStorage.getItem("lg");if(s)return s}catch(e){}return /^zh/i.test(navigator.language||"zh")?"zh":"en"})();
+var UL={};
+var TR_R=[[/第 (\d+) \/ (\d+) 题/g,"Question $1 / $2"],[/第 (\d+) 题：/g,"Q$1: "],[/已选 (\d+) \/ 10 题（至少3题）/g,"Selected $1 / 10 (min 3)"],[/placeholder="选项(\d)"/g,'placeholder="Option $1"'],[/(\d+) 道题 · 看看你是不是真朋友/g,"$1 questions · Are you a real friend?"],[/嗨～我是(.*?) 👋 来玩玩「(.*?)」吧！共 (\d+) 题。/g,"Hi! I’m $1 👋 Let’s play “$2”! $3 questions."],[/测完啦！你一次答对了 (\d+) \/ (\d+) 题。/g,"All done! You got $1 / $2 right on the first try. "],[/(\d+) 秒后可以关闭/g,"You can close in $1 s"]];
+var TR_D=[["免登录，每次的题目都不一样，结果还能存成图片发给朋友。","No sign-up. Questions change every time, and you can save results as an image to share."],["娱乐为主，结果仅供参考 💜","Just for fun — not scientific 💜"],["测测你是谁","Who Are You?"],["好玩的测试合集","Fun Quiz Hub"],["← 回到最后一题改答案","← Change my last answer"],["← 回到出题","← Back to editing"],["← 回去修改","← Back to editing"],["← 去测别的","← Back to quizzes"],["← 返回首页","← Back"],["← 上一题","← Previous"],["长按图片保存，发给朋友一起测 💌","Long-press the image to save it and share 💌"],["再测一次（换一批题）","Take it again (new questions)"],["🏠 去测别的","🏠 More quizzes"],["结果卡片","Result card"],["来测测你是谁 ✨","Find out who you are ✨"],["选几道题，选出你自己的答案，生成二维码发给朋友，让他们来测测。","Pick a few questions, choose your own answers, then share the QR code and see how well friends know you."],["你的昵称（朋友会看到）","Your nickname (friends will see it)"],["系统推荐题 ","Suggested questions "],["🔄 换一批","🔄 Shuffle"],["点你的答案就算选好了，其余选项系统会自动补上。","Tap your answer to add the question. Other options are filled in for you."],["✏️ 其他答案","✏️ Other answer"],["写你自己的答案","Type your own answer"],["确定","OK"],["✏️ 自己出一题","✏️ Write your own question"],["题目，比如：我养的猫叫什么？","Question, e.g. What’s my cat’s name?"],["设为正确","Mark correct"],["✓ 正确","✓ Correct"],["+ 添加这一题","+ Add this question"],["生成测试 ✨","Create my quiz ✨"],["最多10题哦","Maximum 10 questions"],["请填好题目、至少2个选项，并设一个正确答案","Add a question, at least 2 options, and mark the correct one"],["先写下你的答案","Type your answer first"],["至少选3道题再生成哦","Pick at least 3 questions first"],["先写下你的昵称哦","Enter a nickname first"],["🎉 做好啦！","🎉 Your quiz is ready!"],["把二维码或链接发给朋友，他们就能来测测有多懂你。","Share the QR code or link and see how well your friends know you."],["长按图片保存，发到朋友圈或群里 💌","Long-press to save, then post it or send it to a group chat 💌"],["复制链接","Copy link"],["已复制 ✓","Copied ✓"],["▶ 先自己试玩一下","▶ Try it yourself first"],["二维码生成失败（题目可能太长，或二维码组件没加载出来），先用下面的链接分享吧。","Couldn’t make the QR code (questions may be too long). Share the link below instead."],["⚠️ 现在这个页面还在 Claude 上，朋友打开链接看不到你的题。把网站放到你自己的网址后，二维码和链接才会生效。","⚠️ Links only work once the site is on your own domain."],["🫶 我也要出一份","🫶 Make my own"],["满分！你是我的灵魂知己 💯","Perfect score! You’re my soulmate 💯"],["很懂我嘛，是真朋友 🥳","You really get me — a true friend 🥳"],["还行，再多了解我一点～😏","Not bad — get to know me a bit more 😏"],["我们是不是不太熟？🙈","Are we even friends? 🙈"],[" 的 ","’s "],[" 的","’s "],["扫码开始挑战 ✨","Scan to take the challenge ✨"],["☀️ 今日小事 · ","☀️ Today’s little thing · "],["幸运色：","Lucky color: "],[" · 幸运数字："," · Lucky number: "],["看一段短广告，就能解锁你的二维码和分享链接","Watch a short ad to unlock your QR code and share link"],["▶ 看广告解锁","▶ Watch ad to unlock"],["广告位（示例）","Ad space (placeholder)"],["看完啦，谢谢支持 💜","Thanks for watching 💜"],["解锁二维码","Unlock QR code"],["隐私政策","Privacy Policy"]];
+function tr(s){if(LG!="en")return s;TR_R.forEach(function(p){s=s.replace(p[0],p[1])});TR_D.forEach(function(p){s=s.split(p[0]).join(p[1])});return s}
+function adShow(done){
+ // 接入真实的激励广告时，在页面里定义 window.SHOW_REWARDED_AD(done)，广告看完后调用 done() 即可
+ if(typeof window.SHOW_REWARDED_AD=="function"){window.SHOW_REWARDED_AD(done);return}
+ var o=document.createElement("div"),n=5;
+ o.style.cssText="position:fixed;top:0;left:0;right:0;bottom:0;z-index:99;background:rgba(40,36,70,.9);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:24px";
+ o.innerHTML=tr('<div style="font-size:48px">📺</div><p style="font-size:18px;margin:10px 0">广告位（示例）</p><p id="adn" style="color:#ddd">5 秒后可以关闭</p><button class="go" id="adx" style="max-width:240px;opacity:.4" disabled>解锁二维码</button>');
+ document.body.appendChild(o);
+ var t=setInterval(function(){n--;var e=document.getElementById("adn");
+  if(n>0)e.textContent=tr(n+" 秒后可以关闭");
+  else{clearInterval(t);e.textContent=tr("看完啦，谢谢支持 💜");var b=document.getElementById("adx");b.disabled=false;b.style.opacity=1;b.onclick=function(){o.remove();done()}}},1000);
+}
+function mq2(a,ks){return mk(a.map(function(l){var x=l.split("|");return [x[0]].concat(x[1].split(","))}),ks)}
+if(LG=="en"){
+ document.title="Who Are You? · Fun Quiz Hub";
+ QP=pp(["What’s my favorite color?|Red,Blue,Green,Yellow,Black,White,Pink,Purple","What’s my favorite food?|Hot pot,BBQ,Sushi,Pizza,Dessert,Noodles,Rice,Fried chicken","What’s my favorite drink?|Bubble tea,Coffee,Cola,Juice,Sparkling water,Hot water,Beer,Yogurt","What’s my favorite season?|Spring,Summer,Autumn,Winter","What’s my favorite animal?|Cat,Dog,Rabbit,Panda,Fox,Dolphin,Penguin,Hamster","What’s my favorite sport?|Running,Swimming,Basketball,Badminton,Yoga,Cycling,Soccer,None","How do I like to relax?|Binge shows,Play games,Shop,Sleep,Read,Travel,Music,Try new cafés","What am I most afraid of?|Cockroaches,Ghosts,Heights,Snakes,Socializing,Being alone,Exams,Needles","What’s my favorite movie genre?|Comedy,Romance,Sci-fi,Thriller,Action,Animation,Horror,Documentary","Where do I most want to travel?|Japan,Iceland,Europe,Beach,Mountains,Desert,Southeast Asia,Anywhere","What food do I hate most?|Cilantro,Bitter melon,Celery,Organ meat,Durian,Green pepper,Fatty meat,Mushrooms","What’s my catchphrase?|No worries,Okay,Haha,LOL,Whatever,Really?,I’m fine"]);
+ QC=pp(["Where did we first meet?|School,A party,Online,Work,Traveling,Blind date","What do I like most about you?|Kindness,Humor,Smarts,Looks,Ambition,Caring nature","What was our first date?|Dinner,Movie,Shopping,A walk,Theme park,Café","When I’m upset I want you to…|Hug me,Comfort me,Give me space,Buy me food,Apologize sincerely,Make me laugh","Where do I want to go with you?|Beach,Japan,Snow mountains,Theme park,Europe,Just stay local","What habit of yours annoys me most?|Staying up late,Phone addiction,Procrastinating,Slow replies,Messiness,Arguing"]);
+ QB=pp(["How did we meet?|Classmates,Roommates,Coworkers,Online,Neighbors,Mutual friend","What do I tease you about most?|Being late,Procrastinating,Sleeping in,Being cheap,Showing off,Talking too much","What do I most want to do with you?|Travel,Eat out,Play games,Shop,Go to a concert,Do nothing","When I’m down you should…|Chat with me,Buy me food,Leave me alone,Take me out,Make me laugh,Just listen","Which animal am I sure you’re like?|Cat,Dog,Pig,Rabbit,Bear,Monkey","What’s your contact name on my phone?|Real name,Nickname,Funny name,Babe,Legend,Partner in crime"]);
+ R1=["Correct! 👏","That’s so you! 🥳","You get me 😎","Bingo! 🎯"];W1=["Nope! 😜 Try again","Hehe, wrong 🙈","Do you even know me? 😏","So close — guess again 🤭"];
+ DT=["Text a friend you haven’t talked to in a while: “How have you been?”","Drink two extra glasses of water — make one of them warm","Tidy your desk before you leave; you’ll feel better coming back","Play an old song you haven’t heard in ages, all the way through","Smile at yourself in the mirror for three seconds","Write down three tiny joys from today","Look up at the sky while you walk","Put your phone away and really taste one meal","Give someone a specific compliment","Delete 10 old screenshots","Take five slow deep breaths","Go to bed 30 minutes earlier tonight","Call a family member, even for two minutes","Try a small shop you’ve never visited","Start the thing you’ve been putting off — just five minutes","Change your phone wallpaper","Stand up, stretch and roll your shoulders","Say “thank you” to someone nearby","Treat yourself to a drink you love","Unfollow three accounts that make you anxious","Walk for ten minutes without headphones","Finish one small task you’ve been avoiding","Leave a note for your future self","Watch that movie you’ve wanted to see","Help a friend or coworker with something small","Focus on just one thing today","Tidy your wallet or bag","Eat a piece of fruit","Give your pet or plant a little extra care","Write down one small goal for this month","Take a photo of something pretty today","Write down what you’re holding back, then delete it","Learn one new word or fun fact","Try not to complain today","Cook yourself a proper meal","Get five minutes of sunshine","Think of what you did right this week","Share today’s good mood with someone","Invite a friend to dinner this weekend","Allow yourself to go a little slower today","Brew a cup of tea you love and finish it slowly","Smile at the first person you meet","Turn off notifications for one hour","Try a food you’ve never tasted","Share a song you’ve had on repeat with a friend","Tidy just one drawer","Write down one thing you’re proud of today","Take the stairs instead of the elevator","Send a thank-you to a teacher or elder","Stretch for five minutes to loosen your neck and shoulders","Take a 15-minute walk after dinner","Remember the name of someone new you meet","Delete one app you no longer need","Say the compliment you’ve been holding back","Eat three proper meals on time today","Look out the window and count the green things","Doodle something silly that nobody will see","Rearrange your room from a new angle","Eat a meal with family without looking at your phone","Donate one old piece of clothing","Brush your teeth with your other hand for a fresh feeling","Drink only water today","Recommend a book or show to a friend","Write a three-sentence diary","Make your bed before you leave","Laugh off one small annoyance","Learn a simple craft, like origami","Reply to a message you’ve been putting off","Pick three tasks for today and do only those","Ask someone close: “Are you okay today?”","Listen to white noise and rest for five minutes","Water a plant by your window","Take a photo of today’s sky","Buy a snack you like from a nearby shop","Tell yourself: “Thanks for working hard”","Notice one interesting detail on the bus or subway","Think of a question for yourself ten years from now","Wipe your phone screen and earbuds clean","Cook the simplest home dish you know","Skip your phone before bed and read a few pages","Thank a waiter or delivery person","Clear half the clutter off your desk","Pick a song and sing it out loud","Make a list of small things you want to do","Walk down a park or street you’ve never been to","Write down a worry, then tear it up","Greet someone first today","Take a hot shower and unwind early","Start the morning with a glass of warm water","Sit up straight and breathe slowly for one minute","Untangle your chargers and earphones","Find an old photo and remember how you felt","Post something happy for your friends","Say “never mind” one time less today","Do one thing at a time, without scrolling","Visit a bookstore and flip through a few books","Send your parents a photo of today’s meal","Break one small goal into three steps","Look twice at a beautiful building on the way","Buy yourself a flower","Politely say “no” to something once","Change your alarm to a song you love","Finally wash that pile of laundry","Plan a meal with a friend you haven’t seen in a while","Take a new route home","Eat slowly and chew every bite longer","Write a small card for someone nearby","Find one moment today that makes you laugh","Ask a friend a fun question, like “Where do you most want to go?”","Clean up your computer desktop","Give yourself ten minutes of doing nothing","Sit down and listen to someone finish their story","Lay out tomorrow’s outfit tonight","Watch a documentary and learn something new","Tell yourself: “You did great today”","Keep your water bottle within reach","Sit somewhere sunny for a while","Recall the warmest little moment of today","Add a small decoration to a corner of your home","Learn one simple phrase in a new language","Explore somewhere without reading any guide first","Hold a door or carry something for someone","Write down three people you’re grateful for","Think of something to look forward to before sleep","Do one gentle stretch or yoga pose","Put things you haven’t used in ages into a “maybe” box","Smile at a stranger","Order a drink you usually hold back from","Tidy up your phone’s photo album","Say “thank you for the food” before you eat","Listen to a song by an artist you don’t know","Write an encouraging note on a sticky note","Play with a pet or animal for five minutes","Count how many times you said thanks today","Make yourself a bowl of hot soup or porridge","Keep one small habit going until tonight","Send a faraway friend a photo of your weather","Stand by the window and watch the street for a minute","Allow yourself to get one small thing wrong today","Say goodnight to today before bed"];
+ DC=["Red🔴","Orange🟠","Yellow🟡","Green🟢","Blue🔵","Purple🟣","Pink🌸","White⚪"];
+ var TQe=mq2(["Can’t get up in the morning — you…|Invite friends for breakfast,Make a cozy breakfast,Chug coffee and go,Snooze and play a song","Your social media is…|Daily updates,Food and views now and then,Rarely and only for important stuff,Artsy captions","When shopping you…|Drag friends around all day,Wander and buy cute things,Buy what you came for,Hunt indie shops","Replying to messages you…|Reply fast with stickers,Reply warmly,Keep it short,Think first and sometimes forget","When someone compliments you…|Accept and compliment back,Blush and say thanks,Nod and thank them,Say ‘nah’ but feel happy","Your ideal night is…|A party or karaoke,A walk and a chat,Reading or learning,Lights off and thinking"],"abcd");
+ var SQe=mq2(["Invited to dinner with strangers|Excited to meet people,A bit nervous but fine,Looking for an excuse to skip","Your phone rings|Pick up right away,Hesitate,Check who it is then text instead","Running into a coworker in the elevator|Chat happily,Nod and smile,Pretend to check my phone","Speaking in front of a crowd|Kind of exciting,Nervous but I’ll manage,I want to disappear","A delivery person knocks|Open the door normally,Wait until they leave,Pretend I’m not home","Eating at a restaurant alone|No problem at all,A bit awkward,I’d rather order in"],"012");
+ var LQe=mq2(["Your crush hasn’t replied in 3 hours|Normal they’re busy,A bit worried and check my phone,Imagine a whole drama","Your social media in a relationship|Same as always,Mention them sometimes,All about them","They ask you to give up a hobby|No way,Let’s discuss,Okay whatever you say","After a fight|Cool off then talk,Wonder who should apologize first,Apologize right away","Little things they say in passing|Don’t remember,Remember some,Remember everything","Friends say they’re not right for you|Think it over,Hesitate,You just don’t understand them"],"012");
+ TS=[
+ {e:"🧋",t:"Which Boba Are You?",d:"6 questions",c:"#fff1c9",tag:"Your boba match is",q:function(){return pick(TQe,6)},R:{a:["🧋","Boba Milk Tea","The warm social butterfly, always surrounded by people."],b:["🥭","Mango Pomelo Sago","Sweet, gentle and layered — everyone feels at ease with you."],c:["☕","Black Americano","Clear-headed and efficient. Few words, big impact."],d:["🍇","Cheese Grape Tea","A little quirky and full of vibes — worth getting to know."]},res:function(){return best("abcd")}},
+ {e:"🐚",t:"Social Battery",d:"6 questions",c:"#dcf3e8",tag:"Your social result is",q:function(){return pick(SQe,6)},R:{0:["🦋","Social Butterfly","Almost no social anxiety — you make friends anywhere."],1:["🙂","Mildly Shy","New places make you nervous, but you warm up fast."],2:["🐢","Moderately Introverted","You skip socializing when you can — the real you shows up with close friends."],3:["🐚","Battery at 1%","Please leave my package at the door."]},res:sr,b:sb("Social anxiety")},
+ {e:"💘",t:"Love Brain Index",d:"6 questions",c:"#ffd9e8",tag:"Your love result is",q:function(){return pick(LQe,6)},R:{0:["🧊","Clear-Headed","Love is part of life — you put yourself first."],1:["💞","Balanced Lover","You invest your heart but keep your boundaries."],2:["🍯","Early Love Brain","One smile makes your whole day — just don’t go too fast."],3:["🔥","Full Love Brain","You love with everything. Remember to love yourself too."]},res:sr,b:sb("Love brain")}
+ ];
+}
+var FR=[
+{e:"🫶",t:"你有多懂我",d:"自己出题，看朋友懂你多少",c:"#dceeff",pool:QP},
+{e:"💑",t:"情侣默契",d:"考考另一半有多了解你",c:"#ffdce8",pool:QC},
+{e:"🤝",t:"铁瓷考验",d:"闺蜜兄弟，看谁最懂你",c:"#fff1c9",pool:QB}
+];
+var CATS=[
+{e:"🧪",t:"测试题",d:"人格、星座、奶茶、社恐……一个个测过去",c:"#e6e0ff",L:TS},
+{e:"🎯",t:"默契大挑战",d:"你出题，发给朋友，看谁最有默契",c:"#dceeff",L:FR}
+];
+
+if(LG=="en"){
+ FR[0].t="How Well Do You Know Me";FR[0].d="Make a quiz, see how well friends know you";
+ FR[1].t="Couple Quiz";FR[1].d="Test how well your partner knows you";
+ FR[2].t="Besties Test";FR[2].d="See which friend knows you best";
+ CATS[0].t="Quizzes";CATS[0].d="Fun mini-quizzes: boba, social battery, love brain";
+ CATS[1].t="Friend Challenge";CATS[1].d="Make a quiz, share the link, see who knows you best";
+}
+function privacy(){
+ var z=LG!='en',P=z?[['我们收集什么','本站不需要注册或登录，不收集你的姓名、邮箱等个人信息。'],['测试和结果','测试在你的浏览器里完成，结果不会上传到我们的服务器。'],['你出的题目','你在“默契大挑战”里创建的题目、答案和昵称，会编码在分享链接里。拿到链接的人都能看到，请不要填写隐私信息。'],['本地存储','我们只在你的浏览器里保存你选择的语言。'],['第三方','二维码组件从公共 CDN 加载。如果将来展示广告或联盟推广链接，这些第三方可能使用 cookie 等技术，具体以其隐私政策为准。联盟链接可能让我们获得佣金，不会增加你的费用。'],['联系我们','kovynouli@gmail.com'],['政策更新','我们可能会更新本政策，更新后会修改上方日期。']]:[['What we collect','This site doesn’t require sign-up or login, and we don’t collect personal information such as your name or email.'],['Quizzes and results','Quizzes run in your browser. Your results are not uploaded to our servers.'],['Quizzes you create','Questions, answers and the nickname you enter in the Friend Challenge are encoded in the share link. Anyone with the link can see them, so don’t include private information.'],['Local storage','We only store your language choice in your browser.'],['Third parties','The QR code component loads from a public CDN. If we show ads or affiliate links in the future, those third parties may use cookies or similar technologies; their own privacy policies apply. Affiliate links may earn us a commission at no extra cost to you.'],['Contact','kovynouli@gmail.com'],['Changes','We may update this policy and will change the date above when we do.']];
+ show('<button class="bk" id="pb">← '+(z?'返回首页':'Back')+'</button><h1 style="font-size:26px;margin:12px 0 4px">'+(z?'隐私政策':'Privacy Policy')+'</h1><p class="m">'+(z?'更新日期：2026年11月6日':'Last updated: November 6, 2026')+'</p>'+P.map(function(x){return '<p><b>'+x[0]+'</b><br>'+x[1]+'</p>'}).join(''));
+ document.getElementById('pb').onclick=home;
+}
+function boot(){var m=location.hash.match(/^#q=(.+)$/);if(m){try{dqPlay(dec(m[1]));return}catch(e){}}home()}
+boot();
+</script>
+</body>
+</html>
